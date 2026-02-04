@@ -22,6 +22,11 @@
   .btn-limpar { background: #7f8c8d; }
   .btn-excel { background: #1d6f42; }
   .btn-excel:hover { background: #155c36; }
+
+  /* BOTÃO VOLTAR ADICIONADO */
+  .btn-voltar { background: #003366; }
+  .btn-voltar:hover { background: #00264d; }
+
   table { width: 100%; border-collapse: collapse; margin-top: 25px; font-size: 14px; }
   th { background: #003366; color: white; padding: 12px; }
   td { padding: 10px; border-bottom: 1px solid #ddd; }
@@ -49,6 +54,7 @@
       <button onclick="gerarCronograma()">Gerar Cronograma</button>
       <button class="btn-limpar" onclick="limparTabela()">Limpar</button>
       <button class="btn-excel" onclick="exportarExcel()">Exportar para Excel</button>
+      <button class="btn-voltar" onclick="voltarPagina()">Voltar à Página Inicial</button>
     </div>
 
     <table id="tabela">
@@ -100,8 +106,6 @@ const disciplinas = [
   ["Processos de Governança", "Maria Veloso", 8, 8, 0],
   ["Mudanças em Unidades Operacionais", "Adilson Ribeiro", 18, 8, 10],
   ["Respostas a Emergências", "Adilson Ribeiro", 8, 0, 8],
-  
-  
 ];
 
 function formatarData(data) {
@@ -156,6 +160,11 @@ function exportarExcel() {
 function limparTabela() {
   document.querySelector("#tabela tbody").innerHTML = "";
   document.getElementById("dataInicio").value = "";
+}
+
+/* FUNÇÃO ADICIONADA */
+function voltarPagina() {
+  window.location.href = "https://matheuscetiqt.github.io/Paginainicialcronogramadeaula/";
 }
 </script>
 
