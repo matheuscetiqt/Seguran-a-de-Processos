@@ -22,7 +22,6 @@
   .btn-limpar { background: #7f8c8d; }
   .btn-excel { background: #1d6f42; }
   .btn-excel:hover { background: #155c36; }
-
   .btn-voltar { background: #003366; }
   .btn-voltar:hover { background: #00264d; }
 
@@ -126,6 +125,7 @@ function gerarCronograma() {
 
   disciplinas.forEach(disc => {
     const diasDuracao = Math.ceil((disc[2] / horasSemanais) * 7);
+
     const inicio = new Date(dataAtual);
     const fim = new Date(dataAtual);
     fim.setDate(fim.getDate() + diasDuracao);
@@ -141,7 +141,9 @@ function gerarCronograma() {
       </tr>
     `;
 
-    dataAtual = fim;
+    // 🔥 INTERVALO DE 1 DIA ENTRE DISCIPLINAS
+    dataAtual = new Date(fim);
+    dataAtual.setDate(dataAtual.getDate() + 1);
   });
 }
 
